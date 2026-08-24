@@ -1738,21 +1738,3 @@ a.is-consent-disabled {
 }
 
 
-/* Language switcher */
-.nav-lang {
-  display: inline-flex;
-  align-items: center;
-  margin-left: 0.75rem;
-  font-size: 0.875rem;
-  font-weight: 500;
-  color: var(--color-text, #2c241c);
-  text-decoration: none;
-  white-space: nowrap;
-}
-.nav-lang:hover,
-.nav-lang:focus-visible {
-  text-decoration: underline;
-}
-.site-nav.is-open .nav-lang {
-  margin: 0.5rem 0 0;
-}
