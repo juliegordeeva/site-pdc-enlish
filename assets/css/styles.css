@@ -1751,14 +1751,20 @@ a.is-consent-disabled {
 }
 
 .team-profile .person-photo {
-  aspect-ratio: 2 / 3;
+  aspect-ratio: auto;
+  height: auto;
   max-width: 240px;
   margin-bottom: 0;
 }
 
 .team-profile .person-photo img {
-  object-fit: cover;
-  object-position: top center;
+  position: static;
+  inset: auto;
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;
+  object-position: center top;
 }
 
 .team-profile-copy h3 {
