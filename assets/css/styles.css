@@ -1752,9 +1752,18 @@ a.is-consent-disabled {
 
 .team-profile .person-photo {
   aspect-ratio: auto;
+  width: min(220px, 100%);
+  max-width: 220px;
   height: auto;
-  max-width: 240px;
   margin-bottom: 0;
+  display: block;
+  border: none;
+  background: transparent;
+  padding: 0;
+}
+
+.team-profile .person-photo::before {
+  display: none;
 }
 
 .team-profile .person-photo img {
@@ -1763,8 +1772,9 @@ a.is-consent-disabled {
   width: 100%;
   height: auto;
   display: block;
-  object-fit: contain;
-  object-position: center top;
+  border: none;
+  border-radius: calc(var(--radius) - 0.25rem);
+  object-fit: unset;
 }
 
 .team-profile-copy h3 {
