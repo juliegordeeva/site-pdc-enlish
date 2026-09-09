@@ -3,8 +3,8 @@
 Static English website for **Psy Development Center** — Evidence-Based Therapy Centre.
 
 - **Domain:** [https://psydc.world](https://psydc.world)
-- **Russian site:** [https://psydc.org](https://psydc.org)
-- **Contact:** Telegram [@psydevcenter](https://t.me/psydevcenter) · `s.romanchenko@psydc.org` · +7 (925) 459-88-89
+- **Russian site:** [https://psydc.world/ru/](https://psydc.world/ru/)
+- **Contact:** Telegram [@psydevcenter](https://t.me/psydevcenter) · `s.romanchenko@psydc.world`
 
 ## Pages
 

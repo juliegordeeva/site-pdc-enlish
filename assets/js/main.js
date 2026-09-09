@@ -110,15 +110,24 @@
   const contactsWriteUrl = (() => {
     const path = window.location.pathname || "";
     if (path.endsWith("contacts.html") || path.endsWith("/contacts")) return "#write";
-    if (path.includes("/") && !path.endsWith("/") && path.split("/").pop()?.includes(".")) {
-      return "contacts.html#write";
-    }
-    return "contacts.html#write";
+    const parts = path.split("/").filter(Boolean);
+    const inArticles = parts.includes("articles");
+    const prefix = inArticles ? "../" : "";
+    return `${prefix}contacts.html#write`;
   })();
 
+  const isRu = (document.documentElement.lang || "").toLowerCase().startsWith("ru");
   const consentNotes = (marketing) => {
-    const lines = ["I confirm consent to the processing of personal data."];
-    if (marketing) lines.push("I agree to receive informational materials.");
+    const lines = isRu
+      ? ["Подтверждаю согласие на обработку персональных данных."]
+      : ["I confirm consent to the processing of personal data."];
+    if (marketing) {
+      lines.push(
+        isRu
+          ? "Согласен(а) на получение информационных материалов."
+          : "I agree to receive informational materials."
+      );
+    }
     return lines.join("\n");
   };
 
@@ -136,7 +145,7 @@
 
       if (href.includes("t.me/")) {
         const url = new URL(href);
-        const text = url.searchParams.get("text") || "Hello! I am writing from the website.";
+        const text = url.searchParams.get("text") || (isRu ? "Здравствуйте! Пишу с сайта." : "Hello! I am writing from the website.");
         url.searchParams.set("text", `${text}\n\n${notes}`);
         return url.toString();
       }
