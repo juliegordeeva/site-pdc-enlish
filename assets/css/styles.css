@@ -1817,3 +1817,63 @@ a.is-consent-disabled {
 .site-nav.is-open .nav-lang {
   margin: 0.5rem 0 0;
 }
+
+/* Three-step process layout (desktop only; smaller screens use the default stacking) */
+@media (min-width: 1025px) {
+  .steps.steps-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .steps.steps-3::before {
+    left: 10%;
+    right: 10%;
+  }
+}
+
+/* Status label for programmes that are not yet open */
+.status-badge {
+  display: inline-block;
+  margin: 0 0 var(--space-3);
+  padding: 0.2rem 0.75rem;
+  border: 1px solid var(--color-sand);
+  border-radius: 999px;
+  background: var(--color-cream);
+  color: var(--color-accent-dark);
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+/* Programme availability line and disclaimer */
+.availability-line {
+  margin-top: var(--space-4);
+  color: var(--color-muted);
+  font-weight: 500;
+}
+
+.medical-disclaimer {
+  color: var(--color-muted);
+}
+
+/* FAQ */
+.faq-list {
+  display: grid;
+  gap: var(--space-3);
+  max-width: 52rem;
+}
+
+.faq-item {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius);
+  padding: var(--space-4) var(--space-5);
+}
+
+.faq-item summary {
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.faq-item p {
+  margin: var(--space-3) 0 0;
+  color: var(--color-muted);
+}
