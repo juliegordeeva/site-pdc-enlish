@@ -24,69 +24,319 @@
       --olive: #eceedf;
       --rose: #f7e9ec;
     }
+
     * { box-sizing: border-box; }
+
     html, body {
-      margin: 0; padding: 0; color: var(--ink);
-      font-family: "Manrope", system-ui, sans-serif; background: #ddd6ce;
+      margin: 0;
+      padding: 0;
+      color: var(--ink);
+      font-family: "Manrope", system-ui, sans-serif;
+      background: #ddd6ce;
     }
+
     .sheet {
-      width: 210mm; height: 297mm; min-height: 297mm; margin: 24px auto;
-      padding: 11mm 13mm 10mm;
+      width: 210mm;
+      height: 297mm;
+      min-height: 297mm;
+      margin: 24px auto;
+      padding: 9mm 12mm 8mm;
       background:
         radial-gradient(ellipse 80% 50% at 100% 0%, rgba(232, 212, 192, 0.55), transparent 55%),
         radial-gradient(ellipse 55% 40% at 0% 100%, rgba(236, 238, 223, 0.7), transparent 50%),
         var(--paper);
       box-shadow: 0 18px 48px rgba(45, 41, 38, 0.12);
-      display: flex; flex-direction: column; gap: 6mm; overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      gap: 4mm;
+      overflow: hidden;
     }
-    .brand { display: grid; gap: 2mm; border-bottom: 1px solid var(--sand); padding-bottom: 5mm; }
-    .brand-name { margin: 0; font-size: 24pt; line-height: 1.05; letter-spacing: -0.02em; font-weight: 700; color: var(--accent); }
-    .brand-tag { margin: 0; font-size: 10pt; font-weight: 600; color: var(--accent-soft); letter-spacing: 0.02em; }
-    .lead { margin: 0; max-width: 48em; font-size: 9.5pt; line-height: 1.35; color: var(--ink); }
-    .meta { display: flex; flex-wrap: wrap; gap: 2mm 3mm; margin: 0; padding: 0; list-style: none; font-size: 8pt; font-weight: 600; color: var(--muted); }
-    .meta li { padding: 1mm 2.5mm; border-radius: 999px; background: var(--cream); }
-    .grid { display: grid; grid-template-columns: 1.2fr 0.95fr; gap: 5mm; flex: 1; min-height: 0; }
-    h2 { margin: 0 0 2.5mm; font-size: 11pt; line-height: 1.15; color: var(--accent); }
-    .services { display: grid; grid-template-columns: 1fr 1fr; gap: 2.5mm; align-content: start; }
-    .item { padding: 2.6mm 3mm; border-radius: 2.5mm; background: rgba(255,255,255,0.72); border: 1px solid rgba(232,212,192,0.9); }
+
+    .brand {
+      display: grid;
+      gap: 1.5mm;
+      border-bottom: 1px solid var(--sand);
+      padding-bottom: 3.5mm;
+    }
+
+    .brand-name {
+      margin: 0;
+      font-size: 18pt;
+      line-height: 1.05;
+      letter-spacing: -0.02em;
+      font-weight: 700;
+      color: var(--accent);
+    }
+
+    .brand-tag {
+      margin: 0;
+      font-size: 9pt;
+      font-weight: 600;
+      color: var(--accent-soft);
+      letter-spacing: 0.02em;
+    }
+
+    .lead {
+      margin: 0;
+      max-width: 54em;
+      font-size: 8.4pt;
+      line-height: 1.3;
+      color: var(--ink);
+    }
+
+    .meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5mm 2.5mm;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      font-size: 7.5pt;
+      font-weight: 600;
+      color: var(--muted);
+    }
+
+    .meta li {
+      padding: 0.8mm 2.2mm;
+      border-radius: 999px;
+      background: var(--cream);
+    }
+
+    .filmstrip {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      gap: 2mm;
+      padding: 2.4mm;
+      border-radius: 2.5mm;
+      background: linear-gradient(135deg, #7a3f1f 0%, #9a5230 100%);
+      box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.12);
+      flex: 0 0 auto;
+      align-items: start;
+    }
+
+    .film-frame {
+      position: relative;
+      width: 100%;
+      margin: 0;
+      overflow: hidden;
+      border-radius: 1.2mm;
+      background: #6a3619;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      line-height: 0;
+    }
+
+    .film-frame img {
+      display: block;
+      width: 100%;
+      min-width: 100%;
+      max-width: none;
+      height: auto;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+      object-position: center;
+    }
+
+    .info-row {
+      display: grid;
+      grid-template-columns: 1fr 1.15fr 0.85fr;
+      gap: 3mm;
+    }
+
+    h2 {
+      margin: 0 0 1.8mm;
+      font-size: 10pt;
+      line-height: 1.15;
+      color: var(--accent);
+    }
+
+    .panel {
+      padding: 2.8mm;
+      border-radius: 2.5mm;
+      background: rgba(255, 255, 255, 0.78);
+      border: 1px solid var(--sand);
+    }
+
+    .panel ul {
+      margin: 0;
+      padding-left: 3.5mm;
+      font-size: 7.6pt;
+      line-height: 1.28;
+      color: var(--ink);
+    }
+
+    .panel li + li { margin-top: 0.5mm; }
+
+    .note {
+      margin: 1.5mm 0 0;
+      font-size: 6.8pt;
+      line-height: 1.25;
+      color: var(--muted);
+    }
+
+    .services-block {
+      margin-top: 2mm;
+      display: grid;
+      gap: 2.5mm;
+    }
+
+    .services {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2mm;
+      align-content: start;
+    }
+
+    .item {
+      padding: 2.2mm 2.6mm;
+      border-radius: 2mm;
+      background: rgba(255, 255, 255, 0.72);
+      border: 1px solid rgba(232, 212, 192, 0.9);
+    }
+
     .item:nth-child(odd) { background: var(--lilac); border-color: transparent; }
     .item:nth-child(3n) { background: var(--olive); border-color: transparent; }
     .item:nth-child(4n) { background: var(--rose); border-color: transparent; }
-    .item h3 { margin: 0 0 0.8mm; font-size: 8.8pt; line-height: 1.2; }
-    .item p { margin: 0; font-size: 7.8pt; line-height: 1.28; color: var(--muted); }
-    .side { display: flex; flex-direction: column; gap: 3.5mm; }
-    .panel { padding: 3.2mm; border-radius: 3mm; background: rgba(255,255,255,0.78); border: 1px solid var(--sand); }
-    .panel ul { margin: 0; padding-left: 4mm; font-size: 8.2pt; line-height: 1.32; color: var(--ink); }
-    .panel li + li { margin-top: 0.8mm; }
-    .note { margin: 0; font-size: 7.6pt; line-height: 1.3; color: var(--muted); }
+
+    .item h3 {
+      margin: 0 0 0.5mm;
+      font-size: 8pt;
+      line-height: 1.2;
+    }
+
+    .item p {
+      margin: 0;
+      font-size: 7.2pt;
+      line-height: 1.25;
+      color: var(--muted);
+    }
+
     .contacts {
-      margin-top: auto; padding: 4mm 4.5mm; border-radius: 3.5mm;
+      margin-top: auto;
+      padding: 3.5mm 4mm;
+      border-radius: 3mm;
       background: linear-gradient(135deg, #7a3f1f 0%, #9a5230 100%);
-      color: #fff7f0; display: grid; grid-template-columns: 1.1fr 1fr; gap: 3.5mm;
+      color: #fff7f0;
+      display: grid;
+      grid-template-columns: 1.1fr 1fr;
+      gap: 3mm;
+      flex: 0 0 auto;
     }
-    .contacts h2 { color: #fff7f0; margin-bottom: 2mm; }
-    .contacts p, .contacts a { margin: 0; color: inherit; text-decoration: none; font-size: 8.6pt; line-height: 1.35; }
+
+    .contacts h2 {
+      color: #fff7f0;
+      margin-bottom: 1.5mm;
+      font-size: 10pt;
+    }
+
+    .contacts p,
+    .contacts a {
+      margin: 0;
+      color: inherit;
+      text-decoration: none;
+      font-size: 8pt;
+      line-height: 1.3;
+    }
+
     .contacts a:hover { text-decoration: underline; }
-    .contacts strong { display: block; font-size: 7pt; font-weight: 600; opacity: 0.78; margin-bottom: 0.3mm; letter-spacing: 0.04em; text-transform: uppercase; }
-    .contact-lines { display: grid; gap: 1.6mm; }
-    .site-line { margin-top: 2mm; font-weight: 700; font-size: 10pt; }
-    .screen-actions { width: 210mm; margin: 0 auto 18px; display: flex; gap: 10px; justify-content: flex-end; font-family: "Manrope", system-ui, sans-serif; }
-    .screen-actions a, .screen-actions button {
-      appearance: none; border: 0; cursor: pointer; padding: 10px 14px; border-radius: 999px;
-      background: var(--accent); color: #fff; font: inherit; font-size: 14px; font-weight: 600; text-decoration: none;
+
+    .contacts strong {
+      display: block;
+      font-size: 6.5pt;
+      font-weight: 600;
+      opacity: 0.78;
+      margin-bottom: 0.2mm;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
     }
-    .screen-actions a.secondary { background: #fff; color: var(--accent); border: 1px solid var(--sand); }
-    @media screen and (max-width: 900px) {
-      .sheet { width: auto; min-height: auto; height: auto; margin: 12px; padding: 22px; overflow: visible; }
-      .screen-actions { width: auto; margin: 12px; justify-content: stretch; flex-wrap: wrap; }
-      .screen-actions a, .screen-actions button { flex: 1; text-align: center; }
-      .grid, .contacts, .services { grid-template-columns: 1fr; }
+
+    .contact-lines { display: grid; gap: 1.2mm; }
+
+    .site-line {
+      margin-top: 1.5mm;
+      font-weight: 700;
+      font-size: 9.5pt;
     }
-    @page { size: A4; margin: 0; }
+
+    .screen-actions {
+      width: 210mm;
+      margin: 0 auto 18px;
+      display: flex;
+      gap: 10px;
+      justify-content: flex-end;
+      font-family: "Manrope", system-ui, sans-serif;
+    }
+
+    .screen-actions a,
+    .screen-actions button {
+      appearance: none;
+      border: 0;
+      cursor: pointer;
+      padding: 10px 14px;
+      border-radius: 999px;
+      background: var(--accent);
+      color: #fff;
+      font: inherit;
+      font-size: 14px;
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    .screen-actions a.secondary {
+      background: #fff;
+      color: var(--accent);
+      border: 1px solid var(--sand);
+    }
+
+    @media screen and (max-width: 720px) {
+      .sheet {
+        width: auto;
+        min-height: auto;
+        height: auto;
+        margin: 12px;
+        padding: 22px;
+        overflow: visible;
+      }
+      .screen-actions {
+        width: auto;
+        margin: 12px;
+        justify-content: stretch;
+        flex-wrap: wrap;
+      }
+      .screen-actions a,
+      .screen-actions button { flex: 1; text-align: center; }
+      .filmstrip,
+      .info-row,
+      .services,
+      .contacts { grid-template-columns: 1fr; }
+      .film-frame img { aspect-ratio: 1 / 1; }
+    }
+
+    @page {
+      size: A4;
+      margin: 0;
+    }
+
     @media print {
-      html, body { background: #fff; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      html, body {
+        background: #fff;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+      }
       .screen-actions { display: none !important; }
-      .sheet { width: 210mm; height: 297mm; min-height: 297mm; margin: 0; box-shadow: none; page-break-after: avoid; page-break-inside: avoid; }
+      .sheet {
+        width: 210mm;
+        height: 297mm;
+        min-height: 297mm;
+        margin: 0;
+        box-shadow: none;
+        page-break-after: avoid;
+        page-break-inside: avoid;
+      }
+      .filmstrip { grid-template-columns: 1fr 1fr 1fr 1fr; }
+      .info-row { grid-template-columns: 1fr 1.15fr 0.85fr; }
+      .services { grid-template-columns: 1fr 1fr; }
+      .contacts { grid-template-columns: 1.1fr 1fr; }
+      .film-frame img { aspect-ratio: 1 / 1; }
     }
   </style>
 </head>
@@ -109,76 +359,91 @@
       </ul>
     </header>
 
-    <div class="grid">
-      <section aria-labelledby="services-title">
-        <h2 id="services-title">Services</h2>
-        <div class="services">
-          <article class="item">
-            <h3>Individual Therapy for Adults</h3>
-            <p>Anxiety, low mood, stress, burnout, life transitions and adjustment.</p>
-          </article>
-          <article class="item">
-            <h3>Support for Children &amp; Adolescents</h3>
-            <p>Anxiety, behaviour, emotional regulation, ADHD, ASD, learning and parent–child relationships.</p>
-          </article>
-          <article class="item">
-            <h3>Psychological Assessments</h3>
-            <p>Comprehensive assessment of development, emotions, behaviour and learning; school readiness.</p>
-          </article>
-          <article class="item">
-            <h3>ADOS-2</h3>
-            <p>Standardised observational assessment, used as part of a broader assessment.</p>
-          </article>
-          <article class="item">
-            <h3>Exam Anxiety Management Programme</h3>
-            <p>Practical support for managing exam-related anxiety and pressure.</p>
-          </article>
-          <article class="item">
-            <h3>Perinatal Support</h3>
-            <p>Support for families during pregnancy, preparation for parenthood and adjusting to life once their baby is born.</p>
-          </article>
-          <article class="item">
-            <h3>Mindful Parenting (in development)</h3>
-            <p>A planned programme for parents; details will be shared once confirmed.</p>
-          </article>
-          <article class="item">
-            <h3>Career Exploration Assessment</h3>
-            <p>Using the Strong Interest Inventory to explore study options and career directions.</p>
-          </article>
-        </div>
+    <div class="filmstrip" aria-label="Centre photos">
+      <figure class="film-frame">
+        <img src="assets/images/brochure/brochure-01.jpg" alt="Working with children at the centre" width="1000" height="1000">
+      </figure>
+      <figure class="film-frame">
+        <img src="assets/images/brochure/brochure-02.jpg" alt="Individual consultation" width="1000" height="1000">
+      </figure>
+      <figure class="film-frame">
+        <img src="assets/images/brochure/brochure-03.jpg" alt="Family consultation" width="1000" height="1000">
+      </figure>
+      <figure class="film-frame">
+        <img src="assets/images/brochure/brochure-04.jpg" alt="Therapy session at the centre" width="1000" height="1000">
+      </figure>
+    </div>
+
+    <div class="info-row">
+      <section class="panel" aria-labelledby="how-title">
+        <h2 id="how-title">How to Begin</h2>
+        <ul>
+          <li>Message us on Telegram or send an email.</li>
+          <li>Our care coordinator clarifies your request and suggests a format.</li>
+          <li>Together we agree goals, appointment rhythm and next steps.</li>
+        </ul>
       </section>
 
-      <aside class="side">
-        <section class="panel" aria-labelledby="how-title">
-          <h2 id="how-title">How to Begin</h2>
-          <ul>
-            <li>Message us on Telegram or send an email.</li>
-            <li>Our care coordinator clarifies your request and suggests a format.</li>
-            <li>Together we agree goals, appointment rhythm and next steps.</li>
-          </ul>
-        </section>
-        <section class="panel" aria-labelledby="approach-title">
-          <h2 id="approach-title">Approaches</h2>
-          <ul>
-            <li>Cognitive Behavioural Therapy (CBT)</li>
-            <li>Dialectical Behaviour Therapy (DBT)</li>
-            <li>Emotional regulation skills</li>
-            <li>Trauma-focused approach</li>
-            <li>ABA (Applied Behaviour Analysis)</li>
-          </ul>
-          <p class="note" style="margin-top: 3mm;">Methods are selected individually. Psychological support does not replace medical care when it is needed.</p>
-        </section>
-        <section class="panel" aria-labelledby="who-title">
-          <h2 id="who-title">Who We Support</h2>
-          <ul>
-            <li>Children and parents</li>
-            <li>Adolescents</li>
-            <li>Adults</li>
-            <li>Families</li>
-          </ul>
-        </section>
-      </aside>
+      <section class="panel" aria-labelledby="approach-title">
+        <h2 id="approach-title">Approaches</h2>
+        <ul>
+          <li>Cognitive Behavioural Therapy (CBT)</li>
+          <li>Dialectical Behaviour Therapy (DBT)</li>
+          <li>Emotional regulation skills</li>
+          <li>Trauma-focused approach</li>
+          <li>ABA (Applied Behaviour Analysis)</li>
+        </ul>
+        <p class="note">Methods are selected individually. Psychological support does not replace medical care when it is needed.</p>
+      </section>
+
+      <section class="panel" aria-labelledby="who-title">
+        <h2 id="who-title">Who We Support</h2>
+        <ul>
+          <li>Children and parents</li>
+          <li>Adolescents</li>
+          <li>Adults</li>
+          <li>Families</li>
+        </ul>
+      </section>
     </div>
+
+    <section class="services-block" aria-labelledby="services-title">
+      <h2 id="services-title">Services</h2>
+      <div class="services">
+        <article class="item">
+          <h3>Individual Therapy for Adults</h3>
+          <p>Anxiety, low mood, stress, burnout, life transitions and adjustment.</p>
+        </article>
+        <article class="item">
+          <h3>Support for Children &amp; Adolescents</h3>
+          <p>Anxiety, behaviour, emotional regulation, ADHD, ASD, learning and parent–child relationships.</p>
+        </article>
+        <article class="item">
+          <h3>Psychological Assessments</h3>
+          <p>Comprehensive assessment of development, emotions, behaviour and learning; school readiness.</p>
+        </article>
+        <article class="item">
+          <h3>ADOS-2</h3>
+          <p>Standardised observational assessment, used as part of a broader assessment.</p>
+        </article>
+        <article class="item">
+          <h3>Exam Anxiety Management Programme</h3>
+          <p>Practical support for managing exam-related anxiety and pressure.</p>
+        </article>
+        <article class="item">
+          <h3>Perinatal Support</h3>
+          <p>Support for families during pregnancy, preparation for parenthood and adjusting to life once their baby is born.</p>
+        </article>
+        <article class="item">
+          <h3>Mindful Parenting (in development)</h3>
+          <p>A planned programme for parents; details will be shared once confirmed.</p>
+        </article>
+        <article class="item">
+          <h3>Career Exploration Assessment</h3>
+          <p>Using the Strong Interest Inventory to explore study options and career directions.</p>
+        </article>
+      </div>
+    </section>
 
     <footer class="contacts">
       <div>
