@@ -1,6 +1,6 @@
-# Psychology Development Center (English)
+# Psychology & Development Center (English)
 
-Static English website for **Psychology Development Center** — Evidence-Based Therapy Centre.
+Static English website for **Psychology & Development Center** — Evidence-Based Therapy Centre.
 
 - **Domain:** [https://psydc.world](https://psydc.world)
 - **Russian site:** [https://psydc.world/ru/](https://psydc.world/ru/)
